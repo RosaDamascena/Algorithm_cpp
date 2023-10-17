@@ -9,6 +9,12 @@ int main() {
   for (int i = 0; i < N; i++)
   {
     cin >> a >> b;
+
+    X -= a * b;
   }
   
+  if (X == 0) cout << "Yes";
+  else cout << "No";
+
+  return 0;
 }
