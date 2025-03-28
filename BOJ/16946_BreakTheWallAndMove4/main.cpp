@@ -14,7 +14,7 @@ vector<int> compSize;
 int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, 1, -1};
 
-void DFS(int start_i, int start_j, int id, int &count) {
+void BFS(int start_i, int start_j, int id, int &count) {
     stack<pair<int, int>> s;
     s.push({start_i, start_j});
     compId[start_i][start_j] = id;
@@ -57,7 +57,7 @@ int main(){
             if (grid[i][j] == '0' && compId[i][j] == 0) {
                 currentComp++;
                 int count = 0;
-                DFS(i, j, currentComp, count);
+                BFS(i, j, currentComp, count);
                 compSize[currentComp] = count;
             }
         }
